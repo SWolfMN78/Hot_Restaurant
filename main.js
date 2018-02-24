@@ -36,8 +36,8 @@ var waitlist = [{
     }
 ];
 
+//reservations mock data
 var reservations = [{
-
     custName: "Shakira",
     phone: 5678904560,
     email: "hipsdontlie@gmail.com",
@@ -55,4 +55,33 @@ var reservations = [{
 
 }];
 
-//reservations mock data
+//routs to display the HTML.
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/table", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+//routes for CRUD information.
+
+//keep an eye on this one.
+app.get("/all", function(req, res) {
+    res.json(reservations);
+});
+
+app.get("/api/reservation/new", function(req, res) {
+    // Code here
+});
+
+app.get("/api/waitlist/new", function(req, res) {
+    // Code here
+});
+
+app.post("/api/waitinglist")
