@@ -17,11 +17,24 @@ app.listen(PORT, function() {
 
 //create variables to contain information for the rest. & res.
 var waitlist = [{
-    custName: "",
-    phone: "",
-    email: "",
-    custID: ""
-}];
+        custName: "Jon Snow",
+        phone: "555-867-5309",
+        email: "WhoDoneIT@YourHouse.com",
+        custID: "00012"
+    },
+    {
+        custName: "Matt Smith",
+        phone: "555-408-9191",
+        email: "ILikeBunnies@YourHouse.com",
+        custID: "55839"
+    },
+    {
+        custName: "Noah Jones",
+        phone: "555-321-8920",
+        email: "LooktoTheSky@Gmail.net",
+        custID: "56748961"
+    }
+];
 
 var reservations = [{
     custName: "",
