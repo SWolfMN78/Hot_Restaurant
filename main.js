@@ -56,6 +56,7 @@ var reservations = [{
 }];
 
 //routs to display the HTML.
+app.use(express.static(__dirname + '/assets'));
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
