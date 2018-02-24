@@ -37,8 +37,8 @@ var waitlist = [{
     }
 ];
 
+//reservations mock data
 var reservations = [{
-
     custName: "Shakira",
     phone: 5678904560,
     email: "hipsdontlie@gmail.com",
