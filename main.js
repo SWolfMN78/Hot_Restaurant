@@ -14,3 +14,18 @@ app.use(bodyParser.json());
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
+
+//create variables to contain information for the rest. & res.
+var waitlist = [{
+    custName: "",
+    phone: "",
+    email: "",
+    custID: ""
+}];
+
+var reservations = [{
+    custName: "",
+    phone: "",
+    email: "",
+    custID: ""
+}];
