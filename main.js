@@ -71,11 +71,12 @@ app.get("/table", function(req, res) {
 
 //routes for CRUD information.
 
-//Get the entire list of reservations
-// app.get("/all", function(req, res) {
-//     return res.json(compliedList);
-// });
+/*Get the entire list of reservations
+    // app.get("/all", function(req, res) {
+    //     return res.json(compliedList);
+    //}); */
 
+// Search for a specific reservation.
 app.get("/api/reservation", function(req, res) {
     var choseRes = req.param.reservations;
 
@@ -92,8 +93,21 @@ app.get("/api/reservation", function(req, res) {
     return res.json(reservations)
 });
 
-app.get("/api/waitlist/new", function(req, res) {
-    // Code here
+//search for a waitlist item
+app.get("/api/waitlist", function(req, res) {
+    var choseRes = req.param.waitlist;
+
+    if (choseRes) {
+        console.log(choseRes); //see the info.
+
+        for (var i = 0; 0 < waitlist.length; i++) {
+            if (choseRes === waitlist[i].custID) {
+                return res.json(waitlist[i]);
+            }
+        }
+        return res.json(false)
+    }
+    return res.json(waitlist)
 });
 
 app.post("/api/waitinglist")
