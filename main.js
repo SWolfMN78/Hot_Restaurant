@@ -71,13 +71,25 @@ app.get("/table", function(req, res) {
 
 //routes for CRUD information.
 
-//keep an eye on this one.
-app.get("/all", function(req, res) {
-    res.json(reservations);
-});
+//Get the entire list of reservations
+// app.get("/all", function(req, res) {
+//     return res.json(compliedList);
+// });
 
-app.get("/api/reservation/new", function(req, res) {
-    // Code here
+app.get("/api/reservation", function(req, res) {
+    var choseRes = req.param.reservations;
+
+    if (choseRes) {
+        console.log(choseRes); //see the info.
+
+        for (var i = 0; 0 < reservations.length; i++) {
+            if (choseRes === reservations[i].custID) {
+                return res.json(reservations[i]);
+            }
+        }
+        return res.json(false)
+    }
+    return res.json(reservations)
 });
 
 app.get("/api/waitlist/new", function(req, res) {
