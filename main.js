@@ -37,8 +37,22 @@ var waitlist = [{
 ];
 
 var reservations = [{
-    custName: "",
-    phone: "",
-    email: "",
-    custID: ""
+
+    custName: "Shakira",
+    phone: 5678904560,
+    email: "hipsdontlie@gmail.com",
+    custID: 234
+}, {
+    custName: "Dorothy Dandridge",
+    phone: 3456789080,
+    email: "singerfor lyfe@gmail.com",
+    custID: 345
+}, {
+    custName: "Jessye Norman",
+    phone: 3456785670,
+    email: "bestsoprano@gmail.com",
+    custID: 123
+
 }];
+
+//reservations mock data
