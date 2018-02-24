@@ -1,14 +1,13 @@
 {
-
   "name": "hotrestaraunt",
   "version": "1.0.0",
   "description": "In class group project for working together to help create a great RVSP application",
   "main": "main.js",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   },
   "devDependencies": {},
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,11 +20,5 @@
   "bugs": {
     "url": "https://github.com/SWolfMN78/Hot_Restaurant/issues"
   },
-
-  "homepage": "https://github.com/SWolfMN78/Hot_Restaurant#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2"
-  }
-
+  "homepage": "https://github.com/SWolfMN78/Hot_Restaurant#readme"
 }
