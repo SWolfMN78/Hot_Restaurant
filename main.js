@@ -66,7 +66,7 @@ app.get("/waitinglist", function(req, res) {
     res.sendFile(path.join(__dirname, "waitinglist.html"));
 });
 
-app.get("/table", function(req, res) {
+app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
@@ -78,7 +78,7 @@ app.get("/table", function(req, res) {
     //}); */
 
 // Search for a specific reservation.
-app.get("/api/reservation", function(req, res) {
+app.get("/api/tables", function(req, res) {
     var choseRes = req.param.tables;
 
     if (choseRes) {
