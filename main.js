@@ -53,5 +53,62 @@ var reservations = [{
     phone: 3456785670,
     email: "bestsoprano@gmail.com",
     custID: 123
-
 }];
+
+//routs to display the HTML.
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/table", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+//routes for CRUD information.
+
+/*Get the entire list of reservations
+    // app.get("/all", function(req, res) {
+    //     return res.json(compliedList);
+    //}); */
+
+// Search for a specific reservation.
+app.get("/api/reservation", function(req, res) {
+    var choseRes = req.param.reservations;
+
+    if (choseRes) {
+        console.log(choseRes); //see the info.
+
+        for (var i = 0; 0 < reservations.length; i++) {
+            if (choseRes === reservations[i].custID) {
+                return res.json(reservations[i]);
+            }
+        }
+        return res.json(false)
+    }
+    return res.json(reservations)
+});
+
+//search for a waitlist item
+app.get("/api/waitlist", function(req, res) {
+    var choseRes = req.param.waitlist;
+
+    if (choseRes) {
+        console.log(choseRes); //see the info.
+
+        for (var i = 0; 0 < waitlist.length; i++) {
+            if (choseRes === waitlist[i].custID) {
+                return res.json(waitlist[i]);
+            }
+        }
+        return res.json(false)
+    }
+    return res.json(waitlist)
+});
+
+app.post("/api/waitinglist")
+
