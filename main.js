@@ -17,7 +17,7 @@ app.listen(PORT, function() {
 });
 
 //create variables to contain information for the rest. & res.
-var waitlist = [{
+var waitinglist = [{
         custName: "Jon Snow",
         phone: 555 - 867 - 5309,
         email: "WhoDoneIT@YourHouse.com",
@@ -37,8 +37,8 @@ var waitlist = [{
     }
 ];
 
-//reservations mock data
-var reservations = [{
+//tables mock data
+var tables = [{
     custName: "Shakira",
     phone: 5678904560,
     email: "hipsdontlie@gmail.com",
@@ -62,8 +62,8 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+app.get("/waitinglist", function(req, res) {
+    res.sendFile(path.join(__dirname, "waitinglist.html"));
 });
 
 app.get("/table", function(req, res) {
@@ -72,44 +72,43 @@ app.get("/table", function(req, res) {
 
 //routes for CRUD information.
 
-/*Get the entire list of reservations
+/*Get the entire list of tables
     // app.get("/all", function(req, res) {
     //     return res.json(compliedList);
     //}); */
 
 // Search for a specific reservation.
 app.get("/api/reservation", function(req, res) {
-    var choseRes = req.param.reservations;
+    var choseRes = req.param.tables;
 
     if (choseRes) {
         console.log(choseRes); //see the info.
 
-        for (var i = 0; 0 < reservations.length; i++) {
-            if (choseRes === reservations[i].custID) {
-                return res.json(reservations[i]);
+        for (var i = 0; 0 < tables.length; i++) {
+            if (choseRes === tables[i].custID) {
+                return res.json(tables[i]);
             }
         }
         return res.json(false)
     }
-    return res.json(reservations)
+    return res.json(tables)
 });
 
-//search for a waitlist item
-app.get("/api/waitlist", function(req, res) {
-    var choseRes = req.param.waitlist;
+//search for a waitinglist item
+app.get("/api/waitinglist", function(req, res) {
+    var choseRes = req.param.waitinglist;
 
     if (choseRes) {
         console.log(choseRes); //see the info.
 
-        for (var i = 0; 0 < waitlist.length; i++) {
-            if (choseRes === waitlist[i].custID) {
-                return res.json(waitlist[i]);
+        for (var i = 0; 0 < waitinglist.length; i++) {
+            if (choseRes === waitinglist[i].custID) {
+                return res.json(waitinglist[i]);
             }
         }
         return res.json(false)
     }
-    return res.json(waitlist)
+    return res.json(waitinglist)
 });
 
 app.post("/api/waitinglist")
-
