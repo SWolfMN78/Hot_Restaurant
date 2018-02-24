@@ -4,6 +4,7 @@ var path = require("path");
 
 var app = express(); //creating express 
 var PORT = 3000;
+//CRUD--CREATE/READ/UPDATE/DELETE
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,21 +19,21 @@ app.listen(PORT, function() {
 //create variables to contain information for the rest. & res.
 var waitlist = [{
         custName: "Jon Snow",
-        phone: "555-867-5309",
+        phone: 555 - 867 - 5309,
         email: "WhoDoneIT@YourHouse.com",
-        custID: "00012"
+        custID: 00012
     },
     {
         custName: "Matt Smith",
-        phone: "555-408-9191",
+        phone: 555 - 408 - 9191,
         email: "ILikeBunnies@YourHouse.com",
-        custID: "55839"
+        custID: 55839
     },
     {
         custName: "Noah Jones",
-        phone: "555-321-8920",
+        phone: 555 - 321 - 8920,
         email: "LooktoTheSky@Gmail.net",
-        custID: "56748961"
+        custID: 56748961
     }
 ];
 
@@ -52,7 +53,6 @@ var reservations = [{
     phone: 3456785670,
     email: "bestsoprano@gmail.com",
     custID: 123
-
 }];
 
 //routs to display the HTML.
@@ -111,3 +111,4 @@ app.get("/api/waitlist", function(req, res) {
 });
 
 app.post("/api/waitinglist")
+
